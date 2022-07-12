@@ -14,7 +14,7 @@ const Contact = () => {
     const sendEmail = (e) => {
         e.preventDefault();
     
-        emailjs.sendForm('service_ud6d2g5', 'template_ndxihkl', form.current, 'YOUR_PUBLIC_KEY')
+        emailjs.sendForm('service_ud6d2g5', 'template_ndxihkl', form.current, 'PNVFIGcZv0ah7qzE_')
           .then((result) => {
               console.log(result.text);
           }, (error) => {

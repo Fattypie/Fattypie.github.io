@@ -3,7 +3,7 @@ import './header.css'
 import CTA from './CTA'
 import ME from '../../assets/Lin-icon.png'
 import HeaderSocials from './HeaderSocials'
-import Button from './Button.jsx'
+
 
 const Header = () => {
     
@@ -12,7 +12,7 @@ const Header = () => {
             <div className="container header__container">
                 <h5>Hello I'm</h5>
                 <h1>Lin</h1>
-               <Button />
+               
                 <h5 className="text-ligt">Frontend Developer</h5>
                 <CTA />
                 <HeaderSocials />
