@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/react-gh-pages/static/css/main.338731bc.css",
-    "main.js": "/react-gh-pages/static/js/main.99c809bb.js",
-    "static/media/Yuk Lin_Ng.jpg": "/react-gh-pages/static/media/Yuk Lin_Ng.d930232ad50602a6951a.jpg",
-    "static/media/Yuk Lin_Ng_lebenslauf.pdf": "/react-gh-pages/static/media/Yuk Lin_Ng_lebenslauf.57ed85d93b523410caac.pdf",
-    "static/media/Lin-icon.png": "/react-gh-pages/static/media/Lin-icon.b85f2c0479923b71bd38.png",
-    "index.html": "/react-gh-pages/index.html",
-    "main.338731bc.css.map": "/react-gh-pages/static/css/main.338731bc.css.map",
-    "main.99c809bb.js.map": "/react-gh-pages/static/js/main.99c809bb.js.map"
+    "main.css": "/static/css/main.338731bc.css",
+    "main.js": "/static/js/main.6f031443.js",
+    "static/media/Yuk Lin_Ng.jpg": "/static/media/Yuk Lin_Ng.d930232ad50602a6951a.jpg",
+    "static/media/Yuk Lin_Ng_lebenslauf.pdf": "/static/media/Yuk Lin_Ng_lebenslauf.57ed85d93b523410caac.pdf",
+    "static/media/Lin-icon.png": "/static/media/Lin-icon.b85f2c0479923b71bd38.png",
+    "index.html": "/index.html",
+    "main.338731bc.css.map": "/static/css/main.338731bc.css.map",
+    "main.6f031443.js.map": "/static/js/main.6f031443.js.map"
   },
   "entrypoints": [
     "static/css/main.338731bc.css",
-    "static/js/main.99c809bb.js"
+    "static/js/main.6f031443.js"
   ]
 }
