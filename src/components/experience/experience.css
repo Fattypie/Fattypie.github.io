@@ -10,13 +10,13 @@
     border-radius: 2rem;
     border: 1px solid transparent;
     transition: var(--color-bg-variant);
-}
+} 
 
-.experience__container > div:hover {
+/* .experience__container > div:hover {
     background: transparent;
     border-color: var(--color-bg-variant);
     cursor: default;
-}
+} */
 
 .experience__container > div h3 {
     text-align: center;

@@ -7,8 +7,6 @@ import About from './components/about/About'
 import Experience from './components/experience/Experience'
 import Services from './components/services/Services'
 import Contact from './components/contact/Contact'
-import { useEffect } from 'react'
-
 
 
 const App = () => {
@@ -22,7 +20,7 @@ const App = () => {
         <Services />
         <Contact />
         </>
-        // test branch
+        
     )
 }
 

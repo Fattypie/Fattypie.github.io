@@ -39,7 +39,7 @@ const Experience = () => {
                     <article className='experience__details'>
                         <BsFillBookmarkCheckFill className='experience__detail-icon' />
                         <div>
-                        <h4>Adobe XD</h4>
+                        <h4>Adobe Program</h4>
                         <small className='text-light'>Experienceed</small>
                         </div>
                     </article>
@@ -48,6 +48,14 @@ const Experience = () => {
                         <BsFillBookmarkCheckFill className='experience__detail-icon' />
                         <div>
                         <h4>React</h4>
+                        <small className='text-light'>Experienceed</small>
+                        </div>
+                    </article>
+
+                    <article className='experience__details'>
+                        <BsFillBookmarkCheckFill className='experience__detail-icon' />
+                        <div>
+                        <h4>Redux</h4>
                         <small className='text-light'>Experienceed</small>
                         </div>
                     </article>
@@ -69,14 +77,6 @@ const Experience = () => {
                         <BsFillBookmarkCheckFill className='experience__detail-icon' />
                         <div>
                         <h4>PHP</h4>
-                        <small className='text-light'>Basic</small>
-                        </div>
-                    </article>
-
-                    <article className='experience__details'>
-                        <BsFillBookmarkCheckFill className='experience__detail-icon' />
-                        <div>
-                        <h4>MySQL</h4>
                         <small className='text-light'>Basic</small>
                         </div>
                     </article>

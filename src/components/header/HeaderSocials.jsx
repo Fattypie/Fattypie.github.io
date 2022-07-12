@@ -14,3 +14,5 @@ const HeaderSocials = () => {
 }
 
 export default HeaderSocials
+
+/* target blank will come the new window*/

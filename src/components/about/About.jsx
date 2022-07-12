@@ -6,6 +6,7 @@ import ME from '../../assets/Yuk Lin_Ng.jpg'
 import {MdWork} from 'react-icons/md'
 import {BiRun} from 'react-icons/bi'
 import {AiFillFile} from 'react-icons/ai'
+import ReactTypingEffect from 'react-typing-effect';
 
 function About() {
     return (
@@ -13,7 +14,10 @@ function About() {
           
           <div className="about__title">
             <h5>Get to know</h5>
-            <h2>About me</h2>
+            <ReactTypingEffect text={["About me"]} 
+            cursorRenderer={cursor => <h2>{cursor}</h2>} 
+            cursorColor="pink"/>
+            {/* <h2>About me</h2> */}
             </div>
 
             <div className="container about__container">
@@ -43,8 +47,6 @@ function About() {
                         I love hotpot I love hotpot I love hotpot I love hotpot
                         I love hotpot I love hotpot I love hotpot I love hotpot
                     </p>
-
-                   {/*} <a href="#contact" className='btn btn-primary'>Let's Talk</a> */}
                 </div>
             </div>
         </section>

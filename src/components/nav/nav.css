@@ -1,6 +1,7 @@
 nav {
-    background: rgba(0, 0, 0, 0.3);
+    /*background: rgba(0, 0, 0, 0.3);
     width: max-content;
+    margin-top: -120px;
     display: block;
     padding: 0.7rem 1.7rem;
     z-index: 2;
@@ -11,16 +12,49 @@ nav {
     display: flex;
     gap: 0.8rem;
     border-radius: 3rem;
+    backdrop-filter: blur(15px); */
+
+    /* From other ppl ver. 
+    display: block;
+    text-align: center;
+    position: absolute;
+    height: 210px;
+    top: 50%;
+    margin-top: -120px;
+    width: 100%; */
+
+    background: rgba(0, 0, 0, 0.3);
+    /*padding: 0.9rem 1.6rem;*/
+    padding-top: 1.6rem;
+    padding-bottom:1.6rem;
+    padding-left:1rem;
+    padding-right:1rem;
+    width: 5%;
+    display: block;
+    position: fixed;
+    border-radius: 3rem;
+    height: 35%;
+    top: 50%;
+    overflow-x: hidden;
+    margin-top: -120px;
+    transform: translate(70%);
     backdrop-filter: blur(15px);
 }
 
 nav a {
     background: transparent;
-    padding: 0.9rem;
-    border-radius: 50%;
+    align-items: center;
+    width: 100%;
+    border-radius: 5rem;
     display: flex;
     color: var(--color-light);
-    font-size: 1.1rem;
+    font-size: 1.5rem;
+    line-height: 21px;
+    height: 20%;
+    border-radius: 12rem 30rem;
+    padding: 30%;
+   
+    
 }
 
 nav a:hover {
@@ -29,5 +63,9 @@ nav a:hover {
 
 nav a.active {
     background: var(--color-bg);
-    color: var(--color-white);
+    color: var(--color-primary);
+}
+
+@media screen  and (max-width: 1024px) {
+    
 }

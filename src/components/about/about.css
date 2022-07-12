@@ -63,11 +63,11 @@
     border-radius: 10%;
 }
 
-.about__card:hover {
+/* .about__card:hover {
     background: transparent;
     border-color: var(--color-bg-variant);
     cursor: default;
-}
+} */
 
 .about__icon {
     color: var(--color-primary);
