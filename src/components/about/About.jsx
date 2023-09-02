@@ -37,15 +37,13 @@ function About() {
 
                         <article className='about__card'>
                             <BiRun className='about__icon' />
-                            <h5>Where did I started?</h5>
-                            <small>move UP GmbH Hamburg </small>
+                            <h5>Where was my last job?</h5>
+                            <small>OMR Education Hamburg </small>
                         </article>
                     </div>
 
                     <p>
-                        I love hotpot  I love hotpot I love hotpot I love hotpot
-                        I love hotpot I love hotpot I love hotpot I love hotpot
-                        I love hotpot I love hotpot I love hotpot I love hotpot
+                
                     </p>
                 </div>
             </div>
