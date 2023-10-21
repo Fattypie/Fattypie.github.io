@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/static/css/main.67ed023f.css",
-    "main.js": "/static/js/main.1db02f6f.js",
+    "main.css": "/static/css/main.635d87e5.css",
+    "main.js": "/static/js/main.d532cf29.js",
     "static/media/Yuk Lin_Ng.jpg": "/static/media/Yuk Lin_Ng.d930232ad50602a6951a.jpg",
     "static/media/Yuk_Lin_Ng_Lebenslauf.pdf": "/static/media/Yuk_Lin_Ng_Lebenslauf.b987b493bf2f0b10cc39.pdf",
     "static/media/Lin-icon.png": "/static/media/Lin-icon.b85f2c0479923b71bd38.png",
     "index.html": "/index.html",
-    "main.67ed023f.css.map": "/static/css/main.67ed023f.css.map",
-    "main.1db02f6f.js.map": "/static/js/main.1db02f6f.js.map"
+    "main.635d87e5.css.map": "/static/css/main.635d87e5.css.map",
+    "main.d532cf29.js.map": "/static/js/main.d532cf29.js.map"
   },
   "entrypoints": [
-    "static/css/main.67ed023f.css",
-    "static/js/main.1db02f6f.js"
+    "static/css/main.635d87e5.css",
+    "static/js/main.d532cf29.js"
   ]
 }
