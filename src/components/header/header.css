@@ -6,7 +6,10 @@ header {
 }
 
 .header__container {
+    /* text-align: center; */
     text-align: center;
+    left: -20vw;
+    top: 10vw;
     height: 100%;
     position: relative;
 }
@@ -37,7 +40,13 @@ header {
     width: 22rem;
     height: 30rem;
     position: absolute;
-    left: 50%;
+    /* old ver left: 50%; 
+        old ver does not have TOP
+        left: 70vw;
+    top: -3vw;
+    */
+    left: 80vw;
+    top: -8vw;
     transform: translateX(-50%);
     margin-top: 4rem;
     border-radius: 30rem 12rem;
@@ -55,11 +64,22 @@ header {
 
 /* media queries (medium devices */
 @media screen and (max-width: 600px) {
-    header {
+    .header {
         height: 100vh;
     }
 
     .header__socials {
         display: none;
     }
+
+    .header__container {
+        left: 3vw;
+    }
+    
+    .me {
+        left: 45vw;
+        top: 45vw;
+    }
+    
+
 }

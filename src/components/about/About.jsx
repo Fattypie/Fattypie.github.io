@@ -8,16 +8,14 @@ import {BiRun} from 'react-icons/bi'
 import {AiFillFile} from 'react-icons/ai'
 import ReactTypingEffect from 'react-typing-effect';
 
+
 function About() {
     return (
         <section id='about'>
           
           <div className="about__title">
             <h5>Get to know</h5>
-            <ReactTypingEffect text={["About me"]} 
-            cursorRenderer={cursor => <h2>{cursor}</h2>} 
-            cursorColor="pink"/>
-            {/* <h2>About me</h2> */}
+            <ReactTypingEffect text={["About me"]} />
             </div>
 
             <div className="container about__container">
@@ -31,14 +29,14 @@ function About() {
                     <div className="about__cards">
                         <article className='about__card'>
                             <MdWork className='about__icon' />
-                            <h5>Experience</h5>
-                            <small>3 Months Working</small>
+                            <h5> Internship</h5>
+                            <small>Webdeveloper, Moveup Gmbh</small>
                         </article>
 
                         <article className='about__card'>
                             <BiRun className='about__icon' />
                             <h5>Where was my last job?</h5>
-                            <small>OMR Education Hamburg </small>
+                            <small>(Junior) Frontend Developer, <br></br>OMR Education Hamburg </small>
                         </article>
                     </div>
 
@@ -47,9 +45,11 @@ function About() {
                     </p>
                 </div>
             </div>
+        
         </section>
        
     )
 }
+
 
 export default About

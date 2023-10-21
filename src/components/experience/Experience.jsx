@@ -9,7 +9,7 @@ const Experience = () => {
             <h2>My Experience</h2>
 
             <div className="container experience__container">
-                <div className="experience__frontend">
+                <div className="experience__design">
                 <h3>Web Design</h3>
                 <div className="experience__content">
                     <article className='experience__details'>
@@ -27,20 +27,13 @@ const Experience = () => {
                         <small className='text-light'>Experienceed</small>
                         </div>
                     </article>
-
-                    <article className='experience__details'>
-                        <BsFillBookmarkCheckFill className='experience__detail-icon' />
-                        <div>
-                        <h4>Adobe Program</h4>
-                        <small className='text-light'>Experienceed</small>
-                        </div>
-                    </article>
                 </div>
                 </div>
                 {/* END OF FRONTEND */}
 
-                <div className="experience__backend">
+                <div className="experience__frontend">
                     <h3>Frontend Development</h3>
+                    <div className="experience__content">
                      <article className='experience__details'>
                         <BsFillBookmarkCheckFill className='experience__detail-icon' />
                         <div>
@@ -61,7 +54,7 @@ const Experience = () => {
                         <BsFillBookmarkCheckFill className='experience__detail-icon' />
                         <div>
                         <h4>JavaScript</h4>
-                        <small className='text-light'>Intermediate</small>
+                        <small className='text-light'>Experienced</small>
                         </div>
                     </article>
 
@@ -69,7 +62,7 @@ const Experience = () => {
                         <BsFillBookmarkCheckFill className='experience__detail-icon' />
                         <div>
                         <h4>React</h4>
-                        <small className='text-light'>Intermediate</small>
+                        <small className='text-light'>Experienced</small>
                         </div>
                     </article>
 
@@ -77,9 +70,10 @@ const Experience = () => {
                         <BsFillBookmarkCheckFill className='experience__detail-icon' />
                         <div>
                         <h4>Redux</h4>
-                        <small className='text-light'>Intermediate</small>
+                        <small className='text-light'>Experienced</small>
                         </div>
                     </article>
+                </div>
                 </div>
             </div>
         </section>
