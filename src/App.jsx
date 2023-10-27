@@ -8,7 +8,6 @@ import Experience from './components/experience/Experience'
 import Services from './components/services/Services'
 import Contact from './components/contact/Contact'
 
-
 const App = () => {
 
     return (
