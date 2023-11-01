@@ -37,6 +37,9 @@ header {
 /* ME */
 .me {
     background: linear-gradient(var(--color-primary), transparent);
+    /* old ver
+    border-radius: 30rem 12rem; 
+    */
     width: 22rem;
     height: 30rem;
     position: absolute;
@@ -49,11 +52,25 @@ header {
     top: -8vw;
     transform: translateX(-50%);
     margin-top: 4rem;
-    border-radius: 30rem 12rem;
     overflow: hidden;
     padding: 5rem 1.5rem 1.5rem 1.5rem;
+    border-radius: 30rem 12rem; 
+    animation: animate 5s ease-in-out infinite;
+    transition: all 1s ease-in-out;
 }
 
+
+@keyframes animate {
+    0%{
+        border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+    }
+    50%{
+        border-radius: 30% 60% 70% 40%/50% 60% 30% 60%;
+    }
+    100%{
+        border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+    }
+}
 
 /* media queries (medium devices */
 @media screen and (max-width: 1024px) {
