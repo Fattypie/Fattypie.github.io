@@ -14,7 +14,7 @@
     text-align: center;
     flex-direction: column;
     display: flex;
-    padding-top: 8rem;
+    padding-top: 8rem; 
 }
 
 .about__title h5 {

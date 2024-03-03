@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React from 'react'
 import './contact.css'
+import './DynamicButton.jsx'
 
 import {AiTwotoneMail} from 'react-icons/ai'
 import {IoLogoWhatsapp} from 'react-icons/io'
@@ -32,6 +33,7 @@ const Contact = () => {
                     <AiTwotoneMail className='contact__option-icon'/>
                     <h4>Email</h4>
                     <h5>holic613@gmail.com</h5>
+                    {/* <a href="mailto:holic613@gmail.com">Send a message</a> */}
                     <a href="mailto:holic613@gmail.com">Send a message</a>
                 </article>
 
@@ -42,12 +44,16 @@ const Contact = () => {
                     <a href="https://api.whatsapp.com/send?phone=+4915112984291" target="blank" rel="noreferrer">Send a message</a>
                 </article>
             </div>
-            <form ref={form} onSubmit={sendEmail}>
+
+            
+            
+          {/*  <form ref={form} onSubmit={sendEmail}>
                 <input type="text" name='name' placeholder='Your Full name' required />
                 <input type="email" name='email' placeholder='Your Email' required />
                 <textarea name="message" rows="7" placeholder='Your Message' required ></textarea>
                 <button type='submit' className='btn btn-primary'>Send Message</button>
             </form>
+             */}
         </div>
         </section>
     )
