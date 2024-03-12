@@ -2,7 +2,7 @@
 import React from 'react'
 import './contact.css'
 import './DynamicButton.jsx'
-
+import { useState } from 'react';
 import {AiTwotoneMail} from 'react-icons/ai'
 import {IoLogoWhatsapp} from 'react-icons/io'
 import {AiFillInstagram} from 'react-icons/ai'
@@ -23,27 +23,60 @@ const Contact = () => {
           });
       };
 
+      const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+    const [showMessage, setShowMessage] = useState(false);
+
+    //This function handles the cursor movement after entering the div
+    const handleMouseMove = (e) => {
+        setMousePosition({ x: e.clientX, y: e.clientY });
+    };
+
+    //This function handles entering div with cursor
+    const handleMouseEnter = () => {
+        setShowMessage(true);
+    };
+
+    //This function handles leaving div with cursor
+    const handleMouseLeave = () => {
+        setShowMessage(false);
+    };
+
+    const redirectWhatsapp = () => {
+        window.location.href = "https://api.whatsapp.com/send?phone=+4915112984291"
+    }
+
+    const redirectEmail = () => {
+        window.location.href = "mailto:holic613@gmail.com"
+    }
+
     return (
         <section id='contact'>
         <h5>Get In Touch</h5>
         <h2>Contact Me</h2>
         <div className="container contact__container">
             <div className="contact__options">
-                <article className="contact__option">
+                <article className="contact__option" onClick={redirectEmail} onMouseMove={handleMouseMove} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
                     <AiTwotoneMail className='contact__option-icon'/>
                     <h4>Email</h4>
                     <h5>holic613@gmail.com</h5>
                     {/* <a href="mailto:holic613@gmail.com">Send a message</a> */}
-                    <a href="mailto:holic613@gmail.com">Send a message</a>
+                    
                 </article>
 
-                <article className="contact__option">
+                <article className="contact__option" onClick={redirectWhatsapp} onMouseMove={handleMouseMove} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
                     <IoLogoWhatsapp className='contact__option-icon'/>
                     <h4>WhatsApp</h4>
                     <h5>+49 1511 2984 291</h5>
-                    <a href="https://api.whatsapp.com/send?phone=+4915112984291" target="blank" rel="noreferrer">Send a message</a>
+                    
                 </article>
             </div>
+            {showMessage && (
+                    <div className="message__container" style={{ top: mousePosition.y, left: mousePosition.x }}>
+                        <div className="message__circle">
+                            <p>Send a message</p>
+                        </div>
+                    </div>
+                )}
 
             
             

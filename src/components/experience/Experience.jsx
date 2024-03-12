@@ -6,8 +6,8 @@ const Experience = () => {
   const [activeCards, setActiveCards] = useState([]);
 
   const cards = [
-    { title: 'Web Design', skills: ['Adobe Program', 'Figma'] },
-    { title: 'Frontend Development', skills: ['HTML & CSS', 'JavaScript', 'React & Redux', 'Shopify', 'WordPress'] },
+    { title: 'Design Tools', skills: ['Adobe Creative Cloud', 'Figma', 'Procreate', 'Nomad'] },
+    { title: 'Programming', skills: ['HTML & CSS', 'JavaScript', 'React & Redux', 'Shopify', 'WordPress', 'PHP'] },
   ];
 
   const rotateCards = () => {
@@ -31,12 +31,13 @@ const Experience = () => {
     const proportion = stackAreaTop / window.innerHeight;
 
     if (proportion <= 0.3) {
-      const n = cards.length;
+      const n = cards.length-1; // If not -1 the lowest card will also move away
       const index = Math.ceil(Math.abs(proportion) * n - 0.5);
 
       
 
-      setActiveCards(Array.from({ length: n }, (_, i) => i <= index));
+      setActiveCards(Array.from({ length: cards.length }, (_, i) => i <= index));
+      console.log(activeCards)
     }else {
       // Falls das Element nicht mehr sichtbar ist, alle Karten als inaktiv markieren
       setActiveCards(Array.from({ length: cards.length }, () => false));
@@ -69,7 +70,7 @@ const Experience = () => {
                     <BsFillBookmarkCheckFill className="experience_detail-icon" />
                     <div>
                       <h4>{skill}</h4>
-                      <small className="text-light">Experienced</small>
+                    {/*<small className="text-light">Experienced</small>*/}
                     </div>
                   </div>
                 ))}

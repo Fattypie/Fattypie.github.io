@@ -22,6 +22,33 @@
     transition: var(--transition);
 }
 
+.message__container {
+    position: fixed;
+    pointer-events: none;
+}
+
+.message__circle {
+    position: absolute;
+    top: -20px;
+    left: -60px;
+    width: 120px;
+    height: 30px;
+    background-color: #333;
+    color: #fff;
+    font-size: 12px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -100%);
+}
+
+.contact__option:hover .message__circle {
+    display: block;
+}
+
 .contact__option:hover {
     background: transparent;
     border-color: var(--color-primary-variant);
