@@ -1,13 +1,15 @@
 .container.contact__container {
     width: 58%;
     display: grid;
-    grid-template-columns: 30% 58%;
+   /* grid-template-columns: 30% 58%; */
     gap: 12%;
 }
 
 .contact__options {
-    display: flex;
-    flex-direction: column;
+    /*display: flex;
+    flex-direction: column; */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: 1.2rem;
 }
 
@@ -18,6 +20,33 @@
     text-align: center;
     border: 1px solid transparent;
     transition: var(--transition);
+}
+
+.message__container {
+    position: fixed;
+    pointer-events: none;
+}
+
+.message__circle {
+    position: absolute;
+    top: -20px;
+    left: -60px;
+    width: 120px;
+    height: 30px;
+    background-color: #333;
+    color: #fff;
+    font-size: 12px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -100%);
+}
+
+.contact__option:hover .message__circle {
+    display: block;
 }
 
 .contact__option:hover {

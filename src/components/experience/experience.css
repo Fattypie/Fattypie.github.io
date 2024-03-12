@@ -1,16 +1,50 @@
-.experience__container {
+/* .skills {
+    color: pink;
+} */
+
+#experience{
+height: 600px;
+display: flex;
+flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.text-field{
+    margin-left: 0%;
+    width: 100%;
+}
+
+.experience_container {
+    height: 500px;
+    width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 2rem;
+    position: relative;
 }
 
-.experience__container > div {
+#experience h5, #experience h2 {
+    text-align: left;
+    margin-left: 20vw;
+   
+}
+
+#experience h2{
+    color: var(--color-primary);
+}
+
+#experience h5{
+    margin-top: 10vw;
+}
+
+/* .experience__container > div {
     background: var(--color-bg-variant);
     padding: 2.4rem 5rem;
     border-radius: 2rem;
     border: 1px solid transparent;
     transition: var(--color-bg-variant);
-} 
+} */
 
 /* .experience__container > div:hover {
     background: transparent;
@@ -18,21 +52,98 @@
     cursor: default;
 } */
 
-.experience__container > div h3 {
+.experience_container > div h3 {
     text-align: center;
-    margin-bottom: 2rem;
     color: var(--color-primary);
+    margin-bottom: 10px;
 }
 
-.experience__content {
+.stack_area {
+    width: 100%;
+    height: 500px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin-left: -13vw;
+    margin-top: 8vw;
+    
+    
+}
+
+.card {
+    width: 350px;
+    height: 350px;
+    box-sizing: border-box;
+    padding: 35px;
+    border-radius: 6mm;
+    position: absolute;
+    transition: 0.5s ease-in-out;
+   
+}
+
+.card_content{
+    justify-content: space-between;
+    flex-direction: column;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    row-gap: 2rem;
+    
 }
+
+
+
+.card:nth-child(1) {
+    background: var(--color-bg-variant);
+    z-index: 4;
+}
+
+.card:nth-child(2) {
+    background: var(--color-bg-variant);
+    z-index: 3;
+}
+
+.card:nth-child(3) {
+    background: var(--color-bg-variant);
+    z-index: 2;
+}
+
+.card:nth-child(4) {
+    background: rgb(247, 92, 208);
+    z-index: 1;
+}
+
+.card.active {
+    transform-origin: bottom left;
+}
+
+
+
+/*.card {
+    width: 390px;
+    height: 300px;
+    box-sizing: border-box;
+    padding: 35px;
+    border-radius: 6mm;
+    display: grid;
+    justify-content: space-between;
+    flex-direction: column;
+    position: absolute;
+    top: -3vh;
+    left: 50%;
+    transition: 0.5s ease-in-out;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 2rem;
+     old ver
+        display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 2rem;
+    */
+
 
 .experience__details {
     display: flex;
     gap: 1rem;
+    position: relative;
+    top: 5vh;
 }
 
 .experience__details-icon {
@@ -56,6 +167,8 @@
    .experience__content {
        padding: 1rem;
    }
+
+   
 }
 
 /* media queries (medium devices */
@@ -68,4 +181,27 @@
         width: 100%;
         padding: 2rem 1rem;
     }
+
+    .card {
+        margin-left: 5vw;
+        
+    }
+
+    .text-field{
+        width: 70%;
+    }
+
+    #experience h5, #experience h2 {
+        text-align: center;
+        margin-left: 0vw;
+    }
 }
+
+@media screen and (max-width: 768px) {
+    /* Adjustments for low pixel width devices */
+    #experience {
+      flex-direction: column; /* Stack elements vertically */
+      align-items: center; /* Center elements horizontally */
+    }
+  }
+

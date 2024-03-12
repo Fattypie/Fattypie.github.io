@@ -39,6 +39,7 @@ body {
     background: var(--color-bg);
     color: var(--color-white);
     line-height: 1.7;
+    padding: 25px;
     /* background-image: url(../assets/Lin-icon.png); */
 }
 

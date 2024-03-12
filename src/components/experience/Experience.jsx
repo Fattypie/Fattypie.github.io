@@ -1,83 +1,86 @@
-import React from 'react'
-import './experience.css'
-import {BsFillBookmarkCheckFill} from 'react-icons/bs'
+import React, { useEffect, useState } from 'react';
+import { BsFillBookmarkCheckFill } from 'react-icons/bs';
+import './experience.css';
 
 const Experience = () => {
-    return (
-        <section id='experience'>
-            <h5>What Skills I Have</h5>
-            <h2>My Experience</h2>
+  const [activeCards, setActiveCards] = useState([]);
 
-            <div className="container experience__container">
-                <div className="experience__design">
-                <h3>Web Design</h3>
-                <div className="experience__content">
-                    <article className='experience__details'>
-                        <BsFillBookmarkCheckFill className='experience__detail-icon' />
-                        <div>
-                        <h4>Adobe Program</h4>
-                        <small className='text-light'>Experienceed</small>
-                        </div>
-                    </article>
+  const cards = [
+    { title: 'Design Tools', skills: ['Adobe Creative Cloud', 'Figma', 'Procreate', 'Nomad'] },
+    { title: 'Programming', skills: ['HTML & CSS', 'JavaScript', 'React & Redux', 'Shopify', 'WordPress', 'PHP'] },
+  ];
 
-                    <article className='experience__details'>
-                        <BsFillBookmarkCheckFill className='experience__detail-icon' />
-                        <div>
-                        <h4>Figma</h4>
-                        <small className='text-light'>Experienceed</small>
-                        </div>
-                    </article>
-                </div>
-                </div>
-                {/* END OF FRONTEND */}
+  const rotateCards = () => {
+    let angle = 0;
+    document.querySelectorAll('.card').forEach((card, index) => {
+      if (activeCards[index]) {
+        card.style.transform = 'translate(-100vw, -120vh) rotate(-48deg)';
+      } else {
+        //card.style.transform = `translate(-50%, -50%) rotate(${angle}deg)`;
+        card.style.transform = '';
+      }
+    });
+  };
 
-                <div className="experience__frontend">
-                    <h3>Frontend Development</h3>
-                    <div className="experience__content">
-                     <article className='experience__details'>
-                        <BsFillBookmarkCheckFill className='experience__detail-icon' />
-                        <div>
-                        <h4>HTML</h4>
-                        <small className='text-light'>Experienceed</small>
-                        </div>
-                    </article>
+  useEffect(() => {
+    rotateCards();
+  }, [activeCards]);
 
-                    <article className='experience__details'>
-                        <BsFillBookmarkCheckFill className='experience__detail-icon' />
-                        <div>
-                        <h4>CSS</h4>
-                        <small className='text-light'>Experienced</small>
-                        </div>
-                    </article>
+  const handleScroll = () => {
+    const stackAreaTop = document.querySelector('.stack_area').getBoundingClientRect().top;
+    const proportion = stackAreaTop / window.innerHeight;
 
-                    <article className='experience__details'>
-                        <BsFillBookmarkCheckFill className='experience__detail-icon' />
-                        <div>
-                        <h4>JavaScript</h4>
-                        <small className='text-light'>Experienced</small>
-                        </div>
-                    </article>
+    if (proportion <= 0.3) {
+      const n = cards.length-1; // If not -1 the lowest card will also move away
+      const index = Math.ceil(Math.abs(proportion) * n - 0.5);
 
-                    <article className='experience__details'>
-                        <BsFillBookmarkCheckFill className='experience__detail-icon' />
-                        <div>
-                        <h4>React</h4>
-                        <small className='text-light'>Experienced</small>
-                        </div>
-                    </article>
+      
 
-                    <article className='experience__details'>
-                        <BsFillBookmarkCheckFill className='experience__detail-icon' />
-                        <div>
-                        <h4>Redux</h4>
-                        <small className='text-light'>Experienced</small>
-                        </div>
-                    </article>
-                </div>
-                </div>
+      setActiveCards(Array.from({ length: cards.length }, (_, i) => i <= index));
+      console.log(activeCards)
+    }else {
+      // Falls das Element nicht mehr sichtbar ist, alle Karten als inaktiv markieren
+      setActiveCards(Array.from({ length: cards.length }, () => false));
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []); // Empty dependency array to ensure the effect runs only once on mount
+
+  return (
+    <section id="experience">
+      <div className='text-field'>
+      <h5>What Skills I Have</h5>
+      <h2>My Experience</h2>
+      </div>
+
+      <div className="stack_area">
+        <div className="container experience_container">
+          {cards.map((card, i) => (
+            <div key={i} className={`experience_card card`}>
+              <h3>{card.title}</h3>
+              <div className="card_content">
+                {card.skills.map((skill, j) => (
+                  <div key={j} className="experience_skill">
+                    <BsFillBookmarkCheckFill className="experience_detail-icon" />
+                    <div>
+                      <h4>{skill}</h4>
+                    {/*<small className="text-light">Experienced</small>*/}
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
-        </section>
-    )
-}
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
 
-export default Experience
+export default Experience;
