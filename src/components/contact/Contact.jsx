@@ -6,7 +6,7 @@ import { useState } from 'react';
 import {AiTwotoneMail} from 'react-icons/ai'
 import {IoLogoWhatsapp} from 'react-icons/io'
 import {AiFillInstagram} from 'react-icons/ai'
-
+import ReactTypingEffect from 'react-typing-effect';
 import { useRef } from 'react';
 import emailjs from 'emailjs-com'
 
@@ -51,8 +51,11 @@ const Contact = () => {
 
     return (
         <section id='contact'>
-        <h5>Get In Touch</h5>
-        <h2>Contact Me</h2>
+            <div className = "contact_title">
+                <h2>Talkie Talkie</h2>
+        <ReactTypingEffect text={["Get In Touch"]} style={{fontSize: 20}}/>
+            </div>
+        
         <div className="container contact__container">
             <div className="contact__options">
                 <article className="contact__option" onClick={redirectEmail} onMouseMove={handleMouseMove} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>

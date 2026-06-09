@@ -14,6 +14,11 @@ header {
     position: relative;
 }
 
+.header__container h2 {
+    font-size: 100px;
+    color: var(--color-primary);
+}
+
 /* CTA */
 .cta {
     margin-top: 2.5rem;
@@ -24,7 +29,7 @@ header {
 
 /* header social */
 .header__socials {
-     display: flex; 
+     display: flex;
      flex-direction: row;
     align-items: center;
     gap: 0.8rem;
@@ -38,12 +43,12 @@ header {
 .me {
     background: linear-gradient(var(--color-primary), transparent);
     /* old ver
-    border-radius: 30rem 12rem; 
+    border-radius: 30rem 12rem;
     */
     width: 22rem;
     height: 30rem;
     position: absolute;
-    /* old ver left: 50%; 
+    /* old ver left: 50%;
         old ver does not have TOP
         left: 70vw;
     top: -3vw;
@@ -54,7 +59,7 @@ header {
     margin-top: 4rem;
     overflow: hidden;
     padding: 5rem 1.5rem 1.5rem 1.5rem;
-    border-radius: 30rem 12rem; 
+    border-radius: 30rem 12rem;
     animation: animate 5s ease-in-out infinite;
     transition: all 1s ease-in-out;
 }
@@ -72,17 +77,39 @@ header {
     }
 }
 
-/* media queries (medium devices */
+/* media queries (medium devices) */
 @media screen and (max-width: 1024px) {
     header {
         height: 68vh;
     }
+
+    .header__container {
+        left: 0;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .me {
+        width: 16rem;
+        height: 22rem;
+        left: 50%;
+        top: unset;
+        bottom: -2rem;
+        transform: translateX(-50%);
+    }
 }
 
-/* media queries (medium devices */
+/* media queries (small devices) */
 @media screen and (max-width: 600px) {
-    .header {
+    header {
         height: 100vh;
+    }
+
+    .header__container h2 {
+        font-size: 3rem;
     }
 
     .header__socials {
@@ -91,12 +118,15 @@ header {
 
     .header__container {
         left: 3vw;
+        top: 0;
+        padding-top: 2rem;
+        justify-content: flex-start;
     }
-    
+
     .me {
         left: 45vw;
-        top: 45vw;
+        top: 58vw;
+        width: 14rem;
+        height: 20rem;
     }
-    
-
 }

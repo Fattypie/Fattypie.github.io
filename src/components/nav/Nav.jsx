@@ -1,27 +1,66 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
-
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './nav.css'
-import {AiTwotoneHome} from 'react-icons/ai'
-import {FaUserCircle} from 'react-icons/fa'
-import {FaBookReader} from 'react-icons/fa'
+import { AiTwotoneHome }        from 'react-icons/ai'
+import { FaUserCircle }         from 'react-icons/fa'
+import { FaBookReader }         from 'react-icons/fa'
+import { MdPermContactCalendar } from 'react-icons/md'
 
-import {MdPermContactCalendar} from 'react-icons/md'
-import {useState} from 'react'
+const links = [
+    { id: '#',          icon: <AiTwotoneHome />,          label: 'Home'       },
+    { id: '#about',     icon: <FaUserCircle />,           label: 'About'      },
+    { id: '#experience',icon: <FaBookReader />,           label: 'Experience' },
+    { id: '#contact',   icon: <MdPermContactCalendar />,  label: 'Contact'    },
+]
 
 const Nav = () => {
-    const [activeNav, setActiveNav] = useState('#')
+    const [active, setActive] = useState('#')
+
+    useEffect(() => {
+        const sections = links
+            .filter(l => l.id !== '#')
+            .map(l => document.querySelector(l.id))
+            .filter(Boolean)
+
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting)
+                        setActive('#' + entry.target.id)
+                })
+            },
+            { rootMargin: '-40% 0px -40% 0px', threshold: 0 }
+        )
+
+        sections.forEach(s => observer.observe(s))
+
+        // snap back to home when nothing is intersecting near top
+        const onScroll = () => {
+            if (window.scrollY < 100) setActive('#')
+        }
+        window.addEventListener('scroll', onScroll)
+
+        return () => {
+            sections.forEach(s => observer.unobserve(s))
+            window.removeEventListener('scroll', onScroll)
+        }
+    }, [])
+
     return (
-    <nav>
-        <a href="#" onClick={() => setActiveNav('#')} className={activeNav === '#' ? 'active' : ''}><AiTwotoneHome /></a>
-        <a href="#about" onClick={() => setActiveNav('#about')} className={activeNav === '#about' ? 'active' : ''}><FaUserCircle /></a>
-        <a href="#experience" onClick={() => setActiveNav('#experience')} className={activeNav === '#experience' ? 'active' : ''}><FaBookReader /></a>
-        {/*<a href="#services" onClick={() => setActiveNav('#services')} className={activeNav === '#services' ? 'active' : ''}><FaHandsHelping /></a> */}
-        <a href="#contact" onClick={() => setActiveNav('#contact')} className={activeNav === '#contact' ? 'active' : ''}><MdPermContactCalendar /></a>
-    </nav>
+        <nav>
+            {links.map(({ id, icon, label }) => (
+                <a
+                    key={id}
+                    href={id}
+                    className={active === id ? 'active' : ''}
+                    onClick={() => setActive(id)}
+                    aria-label={label}
+                >
+                    {icon}
+                    <span className="nav__tooltip">{label}</span>
+                </a>
+            ))}
+        </nav>
     )
 }
 
 export default Nav
-
-{/*import {FaHandsHelping} from 'react-icons/fa'*/}

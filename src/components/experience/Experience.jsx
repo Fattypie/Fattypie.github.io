@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { BsFillBookmarkCheckFill } from 'react-icons/bs';
+import ReactTypingEffect from 'react-typing-effect';
 import './experience.css';
 
 const Experience = () => {
@@ -55,8 +56,8 @@ const Experience = () => {
   return (
     <section id="experience">
       <div className='text-field'>
-      <h5>What Skills I Have</h5>
-      <h2>My Experience</h2>
+        <h2>My Experience</h2>
+        <ReactTypingEffect text={["What Skills I Have"]} style={{fontSize: 20}}/>
       </div>
 
       <div className="stack_area">

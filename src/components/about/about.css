@@ -14,15 +14,20 @@
     text-align: center;
     flex-direction: column;
     display: flex;
-    padding-top: 8rem; 
+    padding-top: 8rem;
 }
 
 .about__title h5 {
     color: var(--color-light);
 }
 
+.h5 {
+    margin-bottom: 1rem;
+}
+
 .about__title h2 {
     color: var(--color-primary);
+    font-size: 50px;
 }
 
 .about__me {
@@ -48,17 +53,19 @@
     transform: rotate(0);
 }
 
+/*
 .about__cards {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
 }
+    */
 
-.about__card {
-    background: var(--color-bg-variant);
+.about__cards {
+    /*background: var(--color-bg-variant); */
     border: 1px solid transparent;
-    padding: 2rem;
-    text-align: center;
+ /* padding: 2rem; */
+    text-align: left;
     transition: var(--transition);
     border-radius: 10%;
 }
@@ -69,14 +76,28 @@
     cursor: default;
 } */
 
-.about__icon {
+.about__icon{
     color: var(--color-primary);
-    font-size: 1.4rem;
-    margin-bottom: 1rem;
+    font-size: 30px;
+    gap: 1.5rem;
+ /* margin-bottom: 1rem; */
+
+}
+
+.about_ti{
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+}
+
+.about_ti h2{
+    margin: 0;
+    color: var(--color-primary);
 }
 
 .about__card h5 {
-    font-size: 0.95rem;
+    font-size: 3ppx;
 }
 
 .about__card small {
@@ -89,7 +110,23 @@
     color: var(--color-light);
 }
 
-/* media queries (medium devices */
+/*left side*/
+.about__card1, .about__card3{
+    position: relative;
+    left: 100px;
+    width: 350px;
+}
+
+/* right side*/
+.about__card2, .about__card4{
+    position: relative;
+    right: -750px;
+    width: 400px;
+}
+
+
+
+/* media queries (medium devices) */
 @media screen and (max-width: 1024px) {
     .about__container {
         grid-template-columns: 1fr;
@@ -104,9 +141,25 @@
     .about__content p {
         margin: 1rem 0 1.5rem;
     }
+
+    .about__card1, .about__card3 {
+        position: relative;
+        left: 0;
+        width: 100%;
+    }
+
+    .about__card2, .about__card4 {
+        position: relative;
+        right: 0;
+        width: 100%;
+    }
+
+    .about__cards {
+        padding: 0 1.5rem;
+    }
 }
 
-/* media queries (medium devices */
+/* media queries (small devices) */
 @media screen and (max-width: 600px) {
     .about__me {
         width: 65%;
@@ -124,5 +177,17 @@
 
     .about__content p {
         margin: 1.5rem 0;
+    }
+
+    .about__card1, .about__card3 {
+        position: relative;
+        left: 0;
+        width: 100%;
+    }
+
+    .about__card2, .about__card4 {
+        position: relative;
+        right: 0;
+        width: 100%;
     }
 }
